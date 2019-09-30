@@ -1,0 +1,162 @@
+<menu>
+<style>
+@media screen {
+	menu {
+		display: table-cell;
+		min-width: 240px;
+		vertical-align: top;
+		margin: 0;
+		padding: 0px 0px 0px 0px;
+	}
+	.menu-container {
+		position: relative;
+		float: left;
+		margin: 0;
+		padding: 0;
+		width: 0px;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 999;
+	}
+	.menu-menu-wrapper {
+		height: 100%;
+		width: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+	.va-container-h {
+		width: 100%;
+	}
+	.va-container-v {
+		height: 100%;
+	}
+	.va-container {
+		display: table;
+		position: relative;
+	}
+	.menu-content .menu-menu {
+		font-size: 20px;
+		border-color: #ffffff;
+		border-color: rgba(255,255,255,0.2);
+	}
+	.menu-content .menu-menu .menu-group {
+		padding: 0;
+		margin: 0;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	.menu-content .menu-menu .menu-group li {
+		list-style: none !important;
+		border-bottom: 0px solid #444;
+		padding: 0 0 0 0;
+	}
+	.menu-content .menu-menu .menu-group li:hover {
+		background: #ccc;
+	}
+	.menu-content .menu-menu .menu-group li a,
+	.menu-content .menu-menu .menu-group li span {
+		display: inline-block;
+		vertical-align: middle;
+		line-height: 40px;
+		height: 40px;
+		width: 100%;
+		padding: 0 0 0 10px;
+	}
+	.menu-content-close {
+		padding: 10px 20px 0px 15px;
+		width: 20px;
+	}
+	.icon-reorder {
+		cursor: pointer;
+		width: 40px;
+		height: 40px;
+		margin: 0 0 0 2%;
+		right: 0px;
+		position: absolute;
+		background: red url(/images/icons/menu-menu.png) no-repeat left;
+		background-size: 50%;
+		z-index: 999;
+	}
+	menu,
+	menu a {
+		color: black;
+		font-size: 14px;
+		font-weight: normal;
+		text-decoration: none;
+	}
+	.menu-content {
+		position: fixed;
+    padding: 56px 0 0 0;
+		width: 240px;
+		height: 100%;
+		background: transparent;
+    -webkit-transition: margin 0.2s;
+    transition: margin 0.2s;
+	}
+	.menu-underlayer {
+		display:none;
+	}
+	#menu_list {
+		background-color: transparent;
+		border: 0;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+	#menu_list li.selected {
+		background: transparent;
+	}
+	#menu_list li.selected .assetslist-header-label {
+		font-weight: bold;
+	}
+	@media only screen and (max-width: 999px) {
+		menu {
+			width: 0px;
+			min-width: 0;
+		}
+    .menu-content {
+			margin-left: -240px;
+			background: #f2f2f2;
+		}
+		.menu-opened .menu-content {
+			margin-left: 0px;
+		}
+		.menu-underlayer {
+			display:block;
+			position: fixed;
+		  background: black;
+			opacity: 0;
+			-webkit-transition: opacity 0.4s;
+			transition: opacity 0.4s;
+		}
+		.menu-opened .menu-underlayer {
+			width: 100%;
+			height: 100%;
+	    opacity: 0.33;
+	    z-index: 999;
+		}
+	}
+}
+</style>
+<div class="menu-underlayer" data-event="mouseup:function(){menuToggle('close')}"></div>
+<div class="menu-container">
+	<div class="menu-content">
+		<div class="menu-header items-logged-in"></div>
+		<div class="menu-menu-wrapper">
+			<div class="va-container va-container-v va-container-h">
+				<div class="va-middle menu-menu">
+					<ul id="menu_list" class="assetslist" data-name="providerId" data-selectable="1">
+					<%- main.render(main.dirname+'/public/js/assetslist.ejs', {
+						id:'menu_login',
+						icon:'',
+						label:'Корзина',
+						link:main.config.path+"/cart",
+						context:context }) %>
+				  </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</menu>

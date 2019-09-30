@@ -1,0 +1,104 @@
+<style>
+#products {
+	width:100%;
+}
+#products td {
+	width:20%;
+}
+#products input, select, button {
+	width: 100%;
+}
+</style>
+
+<div class="">
+	<div id="content-body" class="content">
+		<h2>Список товаров</h2>
+		<form id="cartform" method="post" data-event="submit:ajaxFormSubmit,success:function(data) { alert( JSON.stringify( data.response ) ); },error:function(){alert('error')}">
+			<table id="products" border="1" width="100%" cellspacing="0" rules="all" cellpadding="3">
+				<thead>
+					<th>name</th>
+					<th>price</th>
+					<th>currency</th>
+					<th>quantity</th>
+					<th></th>
+				</thead>
+				<tbody id="productsList">
+					<tr class="product" data-name="product">
+						<td>
+							<input autocomplete="off" type="text" data-type="string" data-name="product[n][name]" value=""  />
+						</td>
+						<td>
+							<input autocomplete="off" type="text" data-type="ufloat" data-name="product[n][price]" value=""  />
+						</td>
+						<td>
+							<select data-name="product[n][currency]">
+								<option value="RUB">RUB</option>
+								<option value="USD">USD</option>
+								<option value="EUR">EUR</option>
+							</select>
+						</td>
+						<td>
+							<input type="number" min="1" data-type="uint" data-name="product[n][quantity]" value=""  />
+						</td>
+						<td>
+							<button type="button" class="addRowButton" onclick="cloneCustomRow($(this).closest('tr').get(0), '#productsList');">Добавить</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</br>
+			<button style="float:right;" name="button">Посчитать</button>
+		</form>
+	</div>
+</div>
+
+<script>
+  function cloneCustomRow(row, targetQuery) {
+		var name = row.dataset.name;
+		var target = document.querySelector(targetQuery);
+		var rows = target.querySelectorAll('tr');
+		var newRow = document.createElement('tr');
+		var tds = $(row).find("td");
+		var valid = true;
+		tds.each(function(k,td) {
+			var newtd = document.createElement('td');
+			var e = $(td).find('input, select').get(0);
+			if(e) {
+				e.classList.remove("error");
+				var input = document.createElement('input');
+				input.setAttribute('readonly','readonly');
+			  input.name = e.dataset.name.split("[n]").join("["+(rows.length-1)+"]");
+				input.value = e.value.toString();
+				newtd.appendChild(input);
+				switch (e.dataset.type) {
+					case "string":
+						if(input.value.length == 0) {
+							valid = false;
+							newtd = false;
+							e.classList.add("error");
+						}
+						break;
+					case "uint":
+						if(input.value.length == 0 || Number(input.value) != input.value || input.value % 1 !== 0 || input.value<=0) {
+							valid = false;
+							newtd = false;
+							e.classList.add("error");
+						}
+						break;
+					case "ufloat":
+						if(input.value.length == 0 || Number(input.value) != input.value || input.value<=0) {
+							valid = false;
+							newtd = false;
+							e.classList.add("error");
+						}
+						break;
+				}
+			}
+			if(newtd) newRow.appendChild(newtd);
+		});
+		if(valid) {
+			$(row).find('input').val('');
+			row.parentNode.insertBefore(newRow, row);
+		}
+  }
+</script>

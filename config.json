@@ -1,0 +1,8 @@
+{
+	"httpPort": 8080,
+	"host": "",
+	"path": "",
+	"dirPublic": "public",
+	"dirLogs": "logs",
+	"displayLog": true
+}

@@ -1,0 +1,29 @@
+<%
+var data_event = "";
+if(locals.events) {
+  for (var name in locals.events) {
+    data_event += name + ":" + locals.events[name].toString() + ",\n";
+  }
+}
+if(locals.context && locals.link && MyTools.trim(locals.context.req.originalUrl,'/') == MyTools.trim(locals.link,'/')) locals.class += " selected";
+%><li data-id="<%= locals.id %>" <% if(locals.dataset)for(var name in locals.dataset) {%>data-<%=name%>='<%=locals.dataset[name].toString()%>' <%}%> class="collapsed <%= locals.class %>" data-event='<%=data_event%>'>
+  <% if(locals.link) { %><a href="<%= locals.link %>" class="assetslist-item-link"><% } %>
+  <div class="assetslist-header <%= (locals.input=="text" ? "assetslist-header-input-text-container" : "") %>">
+    <% if(locals.icon) { %>
+    <i style="background-image: url(<%= locals.icon %>); background-repeat: no-repeat; background-position: center center; background-size: contain;"></i>
+    <% } %>
+    <div class="assetslist-header-label">
+      <%= locals.label %>
+      <% if(locals.input=="text") { %>
+        <input type='text' name='<%= locals.id %>' class='assetslist-header-input-text' />
+      <% } %>
+      <% if(locals.badge) { %>
+        <span class="badge"><%- locals.badge.value %></span>
+      <% } %>
+    </div>
+  </div>
+  <% if(locals.link) { %></a><% } %>
+  <% if(locals.content) { %>
+  <div class="assetslist-body"><%- locals.content %></div>
+  <% } %>
+</li>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src * gap: data: blob: 'unsafe-inline' 'unsafe-eval' ws: wss:;">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="author" content="Gouranga">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="shortcut icon" href="/favicon.ico" />
+<link media="screen, print, handheld" rel="stylesheet" type="text/css" href="/css/style.css" />
+<link media="screen, print, handheld" rel="stylesheet" type="text/css" href="/css/assetslist.css" />
+<script type="text/javascript" src="/js/jquery-2.0.2.min.js"></script>
+<script type="text/javascript" src="/js/ejs.min.js"></script>
+<script type="text/javascript" src="/js/MyTools.js"></script>
+<script type="text/javascript" src="/js/controller.js"></script>
+<title><%= locals.tag_title %></title>
+<script id="context_variables">
+window.onLoadEvents = {};
+<% for(var name in locals.variables) {
+%> window.<%=name%> = '<%- locals.variables[name] %>';
+<% } %>
+</script>
+</head>
+
+<body class="unselectable">
+	<div id="bodyContent">
+		<%- main.render('_header.ejs',locals) %>
+		<div class="main_column">
+			<%- main.render('_menu.ejs',locals) %>
+			<main>
+				<%- main.render('_main_heading.ejs',locals) %>
+				<%- locals.tag_main %>
+			</main>
+		</div>
+	</div>
+</body>
+</html>

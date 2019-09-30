@@ -1,0 +1,107 @@
+@font-face {
+	font-family: 'Maison Neue';
+	src: url('/fonts/maison_neue/MaisonNeue-LightItalic.woff2') format('woff2'),
+		url('/fonts/maison_neue/MaisonNeue-LightItalic.woff') format('woff'),
+		url('/fonts/maison_neue/MaisonNeue-LightItalic.ttf') format('truetype');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Maison Neue';
+	src: url('/fonts/maison_neue/MaisonNeue-Light.woff2') format('woff2'),
+		url('/fonts/maison_neue/MaisonNeue-Light.woff') format('woff'),
+		url('/fonts/maison_neue/MaisonNeue-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Maison Neue';
+	src: url('/fonts/maison_neue/MaisonNeue-MediumItalic.woff2') format('woff2'),
+		url('/fonts/maison_neue/MaisonNeue-MediumItalic.woff') format('woff'),
+		url('/fonts/maison_neue/MaisonNeue-MediumItalic.ttf') format('truetype');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Maison Neue';
+	src: url('/fonts/maison_neue/MaisonNeue-Book.woff2') format('woff2'),
+		url('/fonts/maison_neue/MaisonNeue-Book.woff') format('woff'),
+		url('/fonts/maison_neue/MaisonNeue-Book.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Maison Neue';
+	src: url('/fonts/maison_neue/MaisonNeue-BoldItalic.woff2') format('woff2'),
+		url('/fonts/maison_neue/MaisonNeue-BoldItalic.woff') format('woff'),
+		url('/fonts/maison_neue/MaisonNeue-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Maison Neue';
+	src: url('/fonts/maison_neue/MaisonNeue-Medium.woff2') format('woff2'),
+		url('/fonts/maison_neue/MaisonNeue-Medium.woff') format('woff'),
+		url('/fonts/maison_neue/MaisonNeue-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Maison Neue';
+	src: url('/fonts/maison_neue/MaisonNeue-BookItalic.woff2') format('woff2'),
+		url('/fonts/maison_neue/MaisonNeue-BookItalic.woff') format('woff'),
+		url('/fonts/maison_neue/MaisonNeue-BookItalic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Maison Neue Mono';
+	src: url('/fonts/maison_neue/MaisonNeue-Mono.woff2') format('woff2'),
+		url('/fonts/maison_neue/MaisonNeue-Mono.woff') format('woff'),
+		url('/fonts/maison_neue/MaisonNeue-Mono.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Maison Neue Mono';
+	src: url('/fonts/maison_neue/MaisonNeue-MonoItalic.woff2') format('woff2'),
+		url('/fonts/maison_neue/MaisonNeue-MonoItalic.woff') format('woff'),
+		url('/fonts/maison_neue/MaisonNeue-MonoItalic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Maison Neue';
+	src: url('/fonts/maison_neue/MaisonNeue-DemiItalic.woff2') format('woff2'),
+		url('/fonts/maison_neue/MaisonNeue-DemiItalic.woff') format('woff'),
+		url('/fonts/maison_neue/MaisonNeue-DemiItalic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Maison Neue';
+	src: url('/fonts/maison_neue/MaisonNeue-Bold.woff2') format('woff2'),
+		url('/fonts/maison_neue/MaisonNeue-Bold.woff') format('woff'),
+		url('/fonts/maison_neue/MaisonNeue-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Maison Neue';
+	src: url('/fonts/maison_neue/MaisonNeue-Demi.woff2') format('woff2'),
+		url('/fonts/maison_neue/MaisonNeue-Demi.woff') format('woff'),
+		url('/fonts/maison_neue/MaisonNeue-Demi.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
